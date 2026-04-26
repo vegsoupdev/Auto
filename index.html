@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investigators Training System</title>
+  <style>
+    :root {
+      --branch-yellow: #facc15;
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+    }
+
+    body { font-family: Arial, sans-serif; margin: 0; background:var(--bg); color:var(--text); }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
+    .card { background:var(--card); padding:20px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,.4); }
+    button { padding:10px 16px; border:none; border-radius:8px; cursor:pointer; margin:8px 8px 0 0; }
+    .btn { background:var(--branch-yellow); color:#000; font-weight:bold; }
+    .btn:disabled { background:#64748b; color:#fff; }
+    .option { padding:10px; margin:8px 0; background:#334155; border-radius:8px; cursor:pointer; }
+    .option.correct { background:#16a34a; }
+    .option.wrong { background:#dc2626; }
+    .dropzone { border:2px dashed #94a3b8; padding:20px; margin-top:10px; min-height:50px; }
+    .draggable { padding:10px; background:#38bdf8; margin:5px; border-radius:6px; cursor:grab; display:inline-block; }
+    .certificate { text-align:center; border:2px solid var(--branch-yellow); padding:20px; border-radius:12px; }
+    img { width:100%; border-radius:10px; }
+    .image-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin:10px 0; }
+    .footnote { font-size:12px; opacity:0.6; text-align:center; margin-top:10px; }
+    .title-banner { color:var(--branch-yellow); font-weight:bold; font-size:18px; margin-bottom:10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="app" class="card"></div>
+    <div class="footnote">Created by veg_soup</div>
+  </div>
+
+<script>
+const trainings = [
+  {
+    title: "Intro to Law",
+    sections: [
+      { type: "slide", title: "Welcome", content: `Welcome to your Introduction to Law training.\n\nThis training will consist of explanations and a few follow up questions to check for understanding. You cannot fail this training. Keep trying each question until you get it right but don't try to brute force it; this is your chance to learn and the info taught in this training will be quizzed in the Investigators Assessment.\n\nMake sure to follow each step carefully.`},
+      { type: "slide", title: "The Jedi Codex", content: `This section will cover the Jedi Codex; a legal document containing all laws of the Order and serves as one of the fundamental documents used by Investigators.\n\nPlease open this document now. A link to it can be found in the faq channel in the Investigators Discord server.\n\nHead to the next page when ready.`},
+      { type: "slide", title: "The Jedi Codex", content: `The Codex is split into four sections: Procedure, Summary of General Provisisions, General Provisions, and the Table of Penalties.\n\nA useful trick that you can use to navigate the Codex quickly is to use the Ctrl + F keybind to open the search menu. This allows you to plug in keywords, allowing you to more easily find laws/crimes.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What are the four sections of the Jedi Codex?", options:["Procedure, General Provisions, Punishments, Laws","Summary of General Provisisions, General Provisions, Mod Guide, and the Table of Penalties","Procedure, Summary of General Provisisions, General Provisions, and the Table of Penalties","Procedure, Summary of General Provisisions, Detention Protocol, and the Table of Penalties"], answer:2 },
+        { type: "mc", question: "What is the keybind to quickly search for laws and crimes?", options:["Ctrl + F","Ctrl + S","Ctrl + C", "F1"], answer:0 },
+      ]},
+      { type: "slide", title: "Section 1: Procedure", content: `.`},
+      { type: "slide", title: "Table of Penalties", content: `Now we will review the Table of Penalties.\n\nThis document serves as a guide for punishing offenders based on the severity of the crime and how many times it has been committed.\n\nPlease open this document now. A link to it can be found in the faq channel in the Investigators Discord server.`},
+      { type: "slide", title: "Table of Penalties", content: `In the Table of Penalties, each crime is sorted by law into sections.\n\nThe subject column determines who the crime applies to.\n\nThe example column provides a few scenarios where a specific crime is being committed. These are just examples and don't cover every scenario.\n\nThe class column can be ignored as it isn't used often.\n\nThe last few columns display the punishment for each subsequent law violation.\n\nIf you have anymore questions about the Table of Penalties (or anything else), contact a High Rank.`},
+      { type: "slide", title: "Edicts", content: `We will conclude with Edicts.\n\nEdicts serve as legal decrees that should be enforced with the same standards as the Laws found in the Jedi Codex.\n\nEdicts can be found in the Edicts channel under the Official Announcements category in the main TJO Discord.\n\nPlease head to that channel now and open up the post named “D-2025-001-A1, KoS Protocol”.\n\nHead to the next page when ready.`},
+      { type: "slide", title: "Edicts", content: `Each edict is enforceable under a specific law and clause. The specific law and clause that should be used can be found under the Enforcement section within each edict.\n\nPlease read through the KoS Protocol Edict and head to the next page once you have a basic understanding of the edict.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "I will now be asking you a few questions about the KoS Protocol Edict to ensure that you know where to look for information.\n\nUnder which law and clause is the KoS Protocol edict enforceable?", options:["Section I, Law of Adherence, Clause IV","Section II, Law of Reverence, Clause V","Section II, Law of Preservation, Clause V","Section II, Law of Reverence, Clause III"], answer:1 },
+        { type: "mc", question: "What is the minimum rank required to follow the KoS Protocol?", options:["Jedi Initiate","Jedi Knight","Padawan Learner","All Jedi"], answer:0},
+        { type: "mc", question: "Which of these are exempt from the KoS Protcol Edict?", options:["Jedi Masters","Jedi who are talking to others","Jedi Investigators","Sith or Hostile individuals actively engaged in combat with two or more members of the Jedi Order"], answer:3},
+      ]},
+      { type: "quiz", questions: [
+        { type: "order", question: "test", items:["test1","test2","test3"], answer:["test2","test1","test3"] }
+      ]},
+      { type: "slide", title:"End", content: "End of Introduction to Law" }
+    ]
+  }
+];
+
+let currentTraining = 0;
+let currentSection = 0;
+let userName = "";
+const app = document.getElementById('app');
+
+function renderNameScreen(){
+  app.innerHTML = `
+    <div class='title-banner'>Jedi Investigators</div>
+    <h2>Enter Your Username</h2>
+    <input id="nameInput" placeholder="Your Username" style="padding:10px;width:100%;border-radius:8px;border:none;margin-top:10px;" />
+    <button class="btn" onclick="startApp()">Begin Training</button>
+  `;
+}
+
+function startApp(){
+  const val = document.getElementById('nameInput').value.trim();
+  if(!val) return;
+  userName = val;
+  renderMenu();
+}
+
+function renderMenu(){
+  app.innerHTML = `
+    <div class='title-banner'>Jedi Investigators</div>
+    <h2>Select Training</h2>
+  `;
+
+  trainings.forEach((t,i)=>{
+    const btn = document.createElement('button');
+    btn.textContent = t.title;
+    btn.className='btn';
+    btn.onclick = ()=>{ currentTraining=i; currentSection=0; renderSection(); };
+    app.appendChild(btn);
+  });
+}
+
+function renderSection(){
+  const section = trainings[currentTraining].sections[currentSection];
+
+  if(section.type === 'slide'){
+    const formatted = (section.content || '').replace(/\n/g, '<br>');
+    app.innerHTML = `
+      <div class='title-banner'>Jedi Investigators</div>
+      <h1>${section.title || ''}</h1>
+      ${section.images ? `<div class="image-grid">${section.images.map(img=>`<img src="${img}">`).join('')}</div>` : ''}
+      <p>${formatted}</p>
+      <button class='btn' onclick='nextSection()'>Next</button>
+    `;
+  } else if(section.type === 'quiz'){
+    renderQuiz(section.questions);
+  }
+}
+
+function renderQuiz(questions){
+  app.innerHTML = '<div class="title-banner">Jedi Investigators</div><h2>Quiz</h2>';
+
+  questions.forEach(q => q.correctlyAnswered = false);
+
+  questions.forEach((q)=>{
+    const div = document.createElement('div');
+    div.innerHTML = `<p>${q.question}</p>`;
+
+    if(q.type === 'mc'){
+      q.options.forEach((opt,i)=>{
+        const btn = document.createElement('div');
+        btn.textContent = opt;
+        btn.className = 'option';
+        btn.onclick = ()=>{
+          const siblings = div.querySelectorAll('.option');
+          siblings.forEach(s => s.classList.remove('correct','wrong'));
+
+          if(i === q.answer){
+            btn.classList.add('correct');
+            q.correctlyAnswered = true;
+          } else {
+            btn.classList.add('wrong');
+            q.correctlyAnswered = false;
+          }
+          checkQuizCompletion(questions);
+        };
+        div.appendChild(btn);
+      });
+    }
+
+    if(q.type === 'order'){
+      const pool = document.createElement('div');
+      const drop = document.createElement('div');
+
+      pool.className = 'dropzone';
+      drop.className = 'dropzone';
+      drop.textContent = 'Drop in order here';
+
+      let placed = [];
+
+      q.items.forEach(text=>{
+        const item = document.createElement('div');
+        item.textContent = text;
+        item.className = 'draggable';
+        item.draggable = true;
+        item.ondragstart = e=> e.dataTransfer.setData('text', text);
+        pool.appendChild(item);
+      });
+
+      drop.ondragover = e=> e.preventDefault();
+      drop.ondrop = e=>{
+        const data = e.dataTransfer.getData('text');
+        placed.push(data);
+
+        const el = document.createElement('div');
+        el.textContent = data;
+        el.className = 'draggable';
+        drop.appendChild(el);
+
+        if(placed.length === q.answer.length){
+          const correct = placed.every((v,i)=>v === q.answer[i]);
+          if(correct){
+            drop.style.borderColor = 'var(--branch-yellow)';
+            q.correctlyAnswered = true;
+          } else {
+            drop.style.borderColor = 'red';
+            drop.innerHTML = 'Incorrect order, retry.';
+            placed = [];
+            q.correctlyAnswered = false;
+          }
+          checkQuizCompletion(questions);
+        }
+      };
+
+      div.appendChild(pool);
+      div.appendChild(drop);
+    }
+
+    app.appendChild(div);
+  });
+
+  const nextBtn = document.createElement('button');
+  nextBtn.textContent = 'Continue';
+  nextBtn.className='btn';
+  nextBtn.disabled = true;
+  nextBtn.id = 'nextBtn';
+  nextBtn.onclick = nextSection;
+  app.appendChild(nextBtn);
+}
+
+function checkQuizCompletion(questions){
+  const allCorrect = questions.every(q=>q.correctlyAnswered === true);
+  document.getElementById('nextBtn').disabled = !allCorrect;
+}
+
+function nextSection(){
+  currentSection++;
+  if(currentSection >= trainings[currentTraining].sections.length){
+    showCertificate();
+  } else {
+    renderSection();
+  }
+}
+
+function showCertificate(){
+  const trainingName = trainings[currentTraining].title;
+  app.innerHTML = `
+    <div class='certificate'>
+      <div class='title-banner'>Jedi Investigators Certification</div>
+      <h1>Certificate of Completion</h1>
+      <p>Congratulations <b>${userName}</b></p>
+      <p>You have successfully completed:</p>
+      <h2>${trainingName}</h2>
+      <button class='btn' onclick='renderMenu()'>Back</button>
+    </div>
+  `;
+}
+
+renderNameScreen();
+</script>
+</body>
+</html>
