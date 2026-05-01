@@ -41,15 +41,15 @@ const trainings = [
   {
     title: "Intro to Law",
     sections: [
-      { type: "slide", title: "Welcome", content: `Welcome to your Introduction to Law training.\n\nThis training will consist of explanations and a few follow up questions to check for understanding. You cannot fail this training. Keep trying each question until you get it right but don't try to brute force it; this is your chance to learn and the info taught in this training will be quizzed in the Investigators Assessment.\n\nMake sure to follow each step carefully.`},
-      { type: "slide", title: "The Jedi Codex", content: `This section will cover the Jedi Codex; a legal document containing all laws of the Order and serves as one of the fundamental documents used by Investigators.\n\nPlease open this document now. A link to it can be found in the faq channel in the Investigators Discord server.\n\nHead to the next page when ready.`},
+      { type: "slide", title: "Welcome", content: `Welcome to your Introduction to Law training.\n\nThis training will consist of explanations and a few follow up questions to check for understanding. You cannot fail this training. Keep trying each question until you get it right but don't try to brute force it; this is your chance to learn and the info taught in this training will be quizzed in the Investigators Assessment.\n\nIf you have any questions at all about any of the content covered in this training, feel free to ask a High Rank.\n\nMake sure to follow each step carefully.`},
+      { type: "slide", title: "The Jedi Codex", content: `This section will cover the Jedi Codex; a legal document containing all laws of the Order and serves as one of the fundamental documents used by Investigators.\n\nPlease open the Jedi Codex now. A link to it can be found in the faq channel in the Investigators Discord server.\n\nHead to the next page when ready.`},
       { type: "slide", title: "The Jedi Codex", content: `The Codex is split into four sections: Procedure, Summary of General Provisisions, General Provisions, and the Table of Penalties.\n\nA useful trick that you can use to navigate the Codex quickly is to use the Ctrl + F keybind to open the search menu. This allows you to plug in keywords, allowing you to more easily find laws/crimes.`},
       { type: "quiz", questions: [
         { type: "mc", question: "What are the four sections of the Jedi Codex?", options:["Procedure, General Provisions, Punishments, Laws","Summary of General Provisisions, General Provisions, Mod Guide, and the Table of Penalties","Procedure, Summary of General Provisisions, General Provisions, and the Table of Penalties","Procedure, Summary of General Provisisions, Detention Protocol, and the Table of Penalties"], answer:2 },
         { type: "mc", question: "What is the keybind to quickly search for laws and crimes?", options:["Ctrl + F","Ctrl + S","Ctrl + C", "F1"], answer:0 },
       ]},
       { type: "slide", title: "Section 1: Procedure", content: `.`},
-      { type: "slide", title: "Table of Penalties", content: `Now we will review the Table of Penalties.\n\nThis document serves as a guide for punishing offenders based on the severity of the crime and how many times it has been committed.\n\nPlease open this document now. A link to it can be found in the faq channel in the Investigators Discord server.`},
+      { type: "slide", title: "Table of Penalties", content: `Now we will review the Table of Penalties.\n\nThis document serves as a guide for punishing offenders based on the severity of the crime and how many times it has been committed.\n\nPlease open the Table of Penalties now. A link to it can be found in the faq channel in the Investigators Discord server.\n\nHead to the next page when ready.`},
       { type: "slide", title: "Table of Penalties", content: `In the Table of Penalties, each crime is sorted by law into sections.\n\nThe subject column determines who the crime applies to.\n\nThe example column provides a few scenarios where a specific crime is being committed. These are just examples and don't cover every scenario.\n\nThe class column can be ignored as it isn't used often.\n\nThe last few columns display the punishment for each subsequent law violation.\n\nIf you have anymore questions about the Table of Penalties (or anything else), contact a High Rank.`},
       { type: "slide", title: "Edicts", content: `We will conclude with Edicts.\n\nEdicts serve as legal decrees that should be enforced with the same standards as the Laws found in the Jedi Codex.\n\nEdicts can be found in the Edicts channel under the Official Announcements category in the main TJO Discord.\n\nPlease head to that channel now and open up the post named “D-2025-001-A1, KoS Protocol”.\n\nHead to the next page when ready.`},
       { type: "slide", title: "Edicts", content: `Each edict is enforceable under a specific law and clause. The specific law and clause that should be used can be found under the Enforcement section within each edict.\n\nPlease read through the KoS Protocol Edict and head to the next page once you have a basic understanding of the edict.`},
@@ -62,6 +62,81 @@ const trainings = [
         { type: "order", question: "test", items:["test1","test2","test3"], answer:["test2","test1","test3"] }
       ]},
       { type: "slide", title:"End", content: "End of Introduction to Law" }
+    ]
+  },
+  {
+    title: "Intro to Conduct",
+    sections: [
+      { type: "slide", title: "Welcome", content: `Welcome to your Introduction to Conduct training.\n\nThis training will consist of explanations and a few follow up questions to check for understanding. You cannot fail this training. Keep trying each question until you get it right but don't try to brute force it; this is your chance to learn and the info taught in this training will be quizzed in the Investigators Assessment.\n\nIf you have any questions at all about any of the content covered in this training, feel free to ask a High Rank.\n\nMake sure to follow each step carefully.`},
+      { type: "slide", title: "Principles of JI", content: `Punishment is never the goal of JI. Our purpose is to improve the overall quality of the game by helping players understand the rules and preventing disruptive behaviour.\n\nWe achieve this in two primary ways:\n\n - Education: teaching and explaining rules to players who may be unaware of them. This always takes priority.\n - Enforcement: addressing players who repeatedly or intentionally disrupt the experience.\n\nNew players who accidentally break a rule they could not reasonably be expected to know (they aren't expected to have read a 20 page document just after joining the game) should not be treated as malicious offenders.\n\nThe objective of JI is to guide and correct behaviour, not to act as judge, jury, and executioner.`},
+      { type: "slide", title: "Principles of JI", content: `When handling an incident, please:\n\n - Check the player’s join date, rank, and previous warnings.\n - Consider the context and intent behind the action.\n - Remain polite, patient, and welcoming at all times.\n - Clearly explain what rule was broken and what they should do differently.\n - Be friendly. We are all players here; this is a community and we are all equals.\n\nFor minor, non-serious infractions where the player understands the mistake, a verbal warning is fine.`},
+      { type: "slide", title: "Principles of JI", content: `We are here to improve the player experience, not ruin it.\n\nFor example, punishing a new player who accidentally crosses the yellow line or makes a basic mistake can create a negative first impression and make them quit.\n\nThere is a clear difference between:\n\n - Intentional, repeated disruptive behaviour (e.g., spawn camping, mass killing), and\n - Honest mistakes made by new or uninformed players.\n\nPlease apply judgement appropriately and consider the full situation before taking action. While the Table of Penalties should still be followed, moderators are expected to use their brains and exercise common sense.\n\nIf any of your moderation actions are consistently found to be negatively impacting player experience, corrective action may be taken.\n\nOur goal is simple: protect the integrity of the game while keeping it welcoming for new and existing players alike.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What is the purpose of JI?", options:["To punish law breakers.","To improve the overall quality of the game by helping players understand the rules and preventing disruptive behaviour.","To abuse our powers.","To arrest anyone who acts against the Order or commits a crime."], answer:1 },
+        { type: "mc", question: "What is the main way we do this?", options:["Arrest rule breakers and giving them warnings.","Yelling at law breakers in VC.","Teaching and explaining rules to players who may be unaware of them. Growth and learning above all.","Banning rule breakers."], answer:2 }
+      ]},
+      { type: "slide", title: "Investigators Handbook", content: `This section will cover the Investigator Handbook; a divisional document containing all conducts, policies, commands, and more. It serves as one of the fundamental documents used by Investigators.\n\nPlease open the Handbook now. A link to it can be found in the faq channel in the Investigators Discord server.\n\nHead to the next page when ready.`},
+      { type: "slide", title: "Investigators Handbook", content: `The Handbook is split into many sections: Policies, Conduct, Training & Events, Rank Structure, Formations & Commands, Moderations Guidelines, and Investigators Medals.`},
+      { type: "slide", title: "Conduct", content: `We will first discuss Training Conduct which are the standards you are held to while attending a training.\n\n - Attendees are to request permission to speak, go AFK, or be dismissed. The request should be written out in full; the only acronym allowed to be used is AFK to denote Away From Keyboard. The request should be addressed towards the host, as these permissions will only be granted by the host.\n\n - Attendees are expected to use proper grammar and demonstrate maturity during the training.\n\n - Attendees are to behave and cause no disruption throughout the training.\n\n - Attendees must refer to the host, co-host, and supervisors by their title rather than by name throughout the training.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "Do attendees need to request permission to speak, go AFK, or be dismissed?", options:["Yes","No"], answer:0 },
+        { type: "mc", question: "Do requests need to be written out in full with no acronyms except AFK?", options:["No","Yes"], answer:1 }
+      ]},
+      { type: "slide", title: "Conduct", content: `Next, we will discuss On-Duty Conduct which are the standards you are held to while on duty and in public communication server channels.\n\n - A Jedi Investigator must use proper grammar at all times in public chat channels.\n\n - A Jedi Investigator must actively attend to the duties assigned to their rank.\n\n - A Jedi Investigator must always follow the moderation guidelines.\n\n - A Jedi Investigator must always comply with all of the Order’s Laws.\n\n - A Jedi Investigator must remain mature and professional in all circumstances.\n\n - A Jedi Investigator must follow the chain of command at all times.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What must an Investigator always do while talking in public chat channels?", options:["Use emojis.","Refer to people by their rank.","Not talk.","Use grammar."], answer:3 },
+        { type: "mc", question: "Should an Investigator remain mature and professional?", options:["Yes","No"], answer:0 }
+      ]},
+      { type: "slide", title: "Conduct", content: `Finally, we will discuss Ticket Conduct. When handling a ticket in the support hub, all Jedi Investigators are expected to adhere to the following:\n\n - A Jedi Investigator should never speak on a ticket that is already being handled without good reason or when they are affiliated with the accuser or the accused.\n\n - A Jedi Investigator must follow these 4 steps when handling tickets:\n\n1. Ensure the user who submitted the ticket has provided their Roblox Username, the Suspect’s Roblox Username, the Suspected Crime, a Summary of Events, and Relevant Evidence\n\n2. Should there be insufficient evidence, request more evidence or witnesses from the user. If sufficient evidence is not provided, the ticket can be concluded and closed.\n\n3. If necessary, conduct any witness interviews and collect necessary statements. Maintain a log of such information.\n\n4. If there is sufficient evidence of the accused crime, issue a punishment per the punishment or arrest guidelines.\n\n - The ability to speak in tickets will be given to individuals who have reached the rank of Investigator.\n\n - If you are ever unsure of how to handle a situation, always contact a higher-ranking member and ask for guidance.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What information is required in a ticket?", options:["Roblox Username, the Suspect’s Roblox Username, the Law Broken, a Summary of Events, and Relevant Evidence","Roblox Username, the Suspected Crime, a Summary of Events, and Relevant Evidence","Roblox Username, the Suspect’s Roblox Username, the Suspected Crime, a Summary of Events, and Relevant Evidence","Roblox Username, the Suspect’s Roblox Username, the Suspected Crime, and Relevant Evidence"], answer:2 },
+        { type: "mc", question: "What should you do if you are unsure of how to handle a situation?", options:["Just freestyle it.","Contact a higher-ranking member and ask for guidance.","Ask a friend for their opinion.","Let them go with a warning and then deal with the situation later."], answer:1 },
+      ]},
+      { type: "slide", title: "The New Member Policy", content: `We will now move on to our policies.\n\nThe New Member Policy states that as a new member of the institution, you are subject to a 14-day probationary period. This means you may be removed for any reason.\n\nThis policy also states that recruits are not given Roblox group and in-game team access until they reach the rank of novus.\n\nMoreover, you are not allowed to request an Inactivity Notice until you reach the rank of monitor.\n\nFinally, this policy states that all novi must join the Support Hub server.`},
+      { type: "slide", title: "Advancement Policy", content: `Moving on to the Advancement Policy. This policy states the amount of time a Low Rank has to rank up.\n\nRecruits have 7 days to rank up to novus. novi have 14 days to rank up to monitor. A monitor has 14 days to rank up to Investigator.\n\nPlease note that if a monitor goes on IN, their timer to rank up is paused until they return from IN.\n\n(Deadlines to rank up are currently waived and are not in effect)`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "When do you gain access to the in-game team/group?", options:["Recruit","Investigator","Novus","Monitor"], answer:2 },
+        { type: "mc", question: "What can you not do until you reach the rank of monitor?", options:["Join VCs.","Talk in game.","Discharge","Request an Inactivity Notice."], answer:3 }
+      ]},
+      { type: "slide", title: "Quota Policy", content: `Moving on to your weekly quota. As recruits, your only goal is to complete the requirements for the novus rank. However, you can see the number of weekly events and the number of hours required every week for each rank.\n\nPlease note that quota is done automatically by our database, and it resets at around 10:00 PM EST on Saturday evening.`},
+      { type: "slide", title: "Logging Hours", content: `Moving on to logging hours. This is how you track how long you’ve been on duty.\n\nEvery time you join the game and are on the Jedi Investigators team, you must begin your shift. Use the /shift manage command in the #droid-commands channel to bring up the control menu. Press “start” to begin your shift, “stop” to end it, and “break” to pause/resume your shift (if you need to go AFK).\n\nIf you have a log that is over 2 hours long, you must have another Investigator vouch for your shift by having them react with a green checkmark to the shift log.\n\nPlease note that if you are caught falsifying shifts, you will be severely punished. However, we understand that mistakes happen, so if you need a shift deleted because you forgot to end your shift by accident, you can submit a shift management notice in #Notices.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "How do you get another Investigator to vouch for shifts over 2 hours?", options:["They say it in chat.","They react with a green checkmark to the shift log.","They message you privately.","No vouch is needed."], answer:1 },
+        { type: "mc", question: "What is the quota for LRs?", options:["2 QPs and 0.5 hours logged.","1 QP and 3 hours logged.","2 QPs and 2 hours logged.","There is no quota."], answer:0 }
+      ]},
+      { type: "slide", title: "Inactivity Notice Policy", content: `Moving on to our Inactivity Notice Policy, which explains the regulations for taking time away from the game and your duties as an Investigator.\n\nThere are two types of inactivity: Partial and Full. Both require a minimum duration of one week.\n\nDuring a Partial IN, you are still expected to complete your duties, but your weekly quota is cut in half. The max duration for a partial IN is 4 weeks.\n\nDuring a Full IN, you are not expected to complete any duties, so your weekly quota is set to 0. However, you may not request rank-ups, medals, trainings, etc. The max duration for a full IN is 2 weeks.\n\nMembers must wait a certain amount of time after an inactivity notice before requesting another. This value is determined by how long you were on a previous Inactivity Notice.`},
+      { type: "slide", title: "Strikes and Discharges", content: `Finally, we will go over strikes and discharges.\n\nYou will be dismissed from the Jedi Investigators should you accumulate 3 division strikes, which you can get for reasons such as not completing quota, failing to adhere to the code of conduct, and more.\n\nTo discharge honorably, without being blacklisted from the institution, you must serve at least 7 days and must send a proper discharge request before leaving. You won’t be able to use any of your past completed requirements in the future.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What is the max duration for a partial IN?", options:["1 week","2 weeks","4 weeks","Unlimited"], answer:2 },
+        { type: "mc", question: "What can't you do on full IN?", options:["Play the game.","Request rank-ups, medals, or trainings.","Talk to others.","Join VCs."], answer:1 },
+        { type: "mc", question: "What must you do before discharging to avoid a blacklist?", options:["Leave quietly.","Serve at least 7 days and send a proper discharge request.","Ask a friend.","Nothing."], answer:1 }
+      ]},
+      { type: "slide", title: "Rank Structure and Chain of Command", content: `We will now cover the Rank Structure and Chain of Command. There are four tiers of ranks when it comes to our ranking system.\n\nHigh Command (HiCom) is in charge of running the division.\n\nveg_soup is the Commissioner, the leader of the Investigators.\n\nMattize2 is the Vice-Commissioner, the right-hand man of the Commissioner.\n\nWhithillian is a Chief Detective.\n\nTheir primary duties are completing behind-the-scenes administrative work and ensuring smooth operation of the division. If you have any administrative requests, ask them.`},
+      { type: "slide", title: "Rank Structure and Chain of Command", content: `High Ranks (HRs) are in charge of trainings and low and mid-level administrative tasks. Please contact a High Rank before attempting to contact High Command.\n\nMiddle Ranks (MRs) are the primary moderators and enforcers of the law.\n\nLow Ranks (LRs) are those who are learning about the institution, in hopes of one day becoming an Investigator.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What are the High Command ranks?", options:["Commissioner, Vice-Commissioner, Chief Detective","Chancellor, Vice-Chancellor, Deputy","Chief of Security, Commander, Captain","Chief Investigator, Senior Investigator, Investigator"], answer:0 },
+        { type: "mc", question: "Who should you contact first if you have any questions?", options:["High Command","The Vice-Commissioner","Anyone","A High Rank"], answer:3 }
+      ]},
+      { type: "slide", title: "Formations and Commands", content: `We will now begin by reviewing the formations and commands used by Jedi Investigators.\n\nSTS or [STS] stands for Shoulder to Shoulder. Investigators should stand in a row in front of the issuer while facing them.`, images: ["STS.png"]},
+      { type: "slide", title: "Formations and Commands", content: `[W] stands for Wedge. Form a V-shape behind the person giving the command, extending from left to right.\n\nIf there is an odd number of Investigators, the lowest-ranking individual stands centered directly behind the person giving the command.`, images: ["Wedge.png"]},
+      { type: "slide", title: "Formations and Commands", content: `[RW] stands for Reverse Wedge. Form an inverted V-shape in front of the person giving the command, extending from left to right.`, images: ["RW.png"]},
+      { type: "slide", title: "Formations and Commands", content: `[SFL] stands for Single File Line. Form a single straight line directly behind the person issuing the formation.\n\nOnce the line is complete, the issuer will command “Prepare,” then “Kick,” prompting each attendee to jump in sequence, starting with the issuer.\n\nOn “March!”, the line will follow the issuer’s movements.\n\nOn “Halt!”, everyone behind the issuer must stop immediately.\n\nThe line must copy the issuer's exact movements and actions including igniting or disigniting their saber, rolling, and force jumping.`, images: ["SFL.png"]},
+      { type: "slide", title: "Formations and Commands", content: `+ or [+] stands for Ignite.\n\n- or [-] stands for Disignite.`},
+      { type: "slide", title: "Formations and Commands", content: `[R-X] stands for Reverse to Location. Report to the location specified (Location replaces X).\n\nLocations include: Holding Cells (HC), Chamber of Law (CoL), Entrance (ET), Combat Room (CR), Rooftops (RT), Archives [ARC], Knighting Hall [KH].`},
+      { type: "slide", title: "Formations and Commands", content: `[NC] stands for No Command. Cease all commands and formations given.\n\n[REG] stands for Register. State your rank and username.\n\nExample: "Commissioner, veg_soup."`},
+      { type: "slide", title: "Formations and Commands", content: `The image above shows a formation. As a Recruit, where would you stand?\n\nAnswer on the next page.`, images: ["q1.png"]},
+      { type: "quiz", questions: [
+        { type: "mc", question: "Where do you stand in the formation on the previous page?", options:["Behind the issuer to the right.","Behind the issuer to the left.","In front of the issuer.","Behind the issuer in the middle."], answer:0 },
+        { type: "mc", question: "What must you do in a SFL?", options:["Stand still.","Spread out.","Follow the issuer’s exact movements and commands.","Ignore commands."], answer:2 }
+      ]},
+      { type: "slide", title: "Moderation Guidelines", content: `A Jedi Investigator should do the following at all times during moderation scenarios:\n\n - Adhere to the Jedi Codex, which contains all of the laws of the Jedi Order.\n\n - Adhere to the Table of Penalties, which contains a guideline of punishments for every law.\n\n - Adhere to the TJO Moderation Guide, which contains all moderation procedures and commands available to Jedi Investigator Middle Ranks.\n\n - Study these three documents rigorously. Failing to abide by these guidelines may result in you failing your probation.\n\n - Have a recording software, such as Medal, running at all times while on duty.Apply nuance while adhering to punishment guidelines.\n\n - Always de-escalate tense situations or individuals.\n\n - Collect and log all evidence and actions taken.`},
+      { type: "slide", title: "Moderation Guidelines", content: `If a situation requires contacting an Overseer or a High Command member of a branch (e.g., a Jedi Master committing a crime), the conversation must be handled by an Investigator High Rank or High Command member. All High Ranks must forward the full conversation to a High Command member, who will then share it with the rest of High Command.`},
+      { type: "slide", title: "Moderation Guidelines", content: `If you are unable to communicate with someone in game due to age restrictions, you may use :notify for moderation purposes only. This command sends them a message that bypasses the chat restrictions. The person you are messaging will not be able to respond back but you can either explain the situation to them or tell them to contact you on Discord.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What three documents must an Investigator follow while moderating?", options:["Jedi Codex, Table of Penalties, TJO Moderation Guide","Jedi Codex, Table of Penalties, TJO Trello","Jedi Codex, Jedi Code, TJO Moderation Guide","Knight Trial Doc, Table of Penalties, TJO Moderation Guide"], answer:0 },
+        { type: "mc", question: "How do you communicate with a player outside of your age group in game?", options:["Ignore them","Kick them","Use VC","Use :notify"], answer:3 }
+      ]},
+      { type: "slide", title:"Conclusion", content: "Thank you for attending this training. This is the conclusion of your Introduction to Conduct training.\n\nIf you have any questions, feel free to ask in the Discord.\n\nHead to the next page to obtain your Certificate of Completion. Make sure to screenshot it and save the photo for later as it will be used as proof for rank up requirements." }
     ]
   }
 ];
@@ -112,6 +187,8 @@ function renderSection(){
       <h1>${section.title || ''}</h1>
       ${section.images ? `<div class="image-grid">${section.images.map(img=>`<img src="${img}">`).join('')}</div>` : ''}
       <p>${formatted}</p>
+
+      ${currentSection > 0 ? `<button class='btn' onclick='prevSection()'>Back</button>` : ''}
       <button class='btn' onclick='nextSection()'>Next</button>
     `;
   } else if(section.type === 'quiz'){
@@ -201,6 +278,14 @@ function renderQuiz(questions){
     app.appendChild(div);
   });
 
+  if(currentSection > 0){
+    const backBtn = document.createElement('button');
+    backBtn.textContent = 'Back';
+    backBtn.className = 'btn';
+    backBtn.onclick = prevSection;
+    app.appendChild(backBtn);
+  }
+
   const nextBtn = document.createElement('button');
   nextBtn.textContent = 'Continue';
   nextBtn.className='btn';
@@ -224,8 +309,20 @@ function nextSection(){
   }
 }
 
+function prevSection(){
+  if(currentSection > 0){
+    currentSection--;
+    renderSection();
+  }
+}
+
 function showCertificate(){
   const trainingName = trainings[currentTraining].title;
+
+  const now = new Date();
+  const date = now.toLocaleDateString();
+  const time = now.toLocaleTimeString();
+
   app.innerHTML = `
     <div class='certificate'>
       <div class='title-banner'>Jedi Investigators Certification</div>
@@ -233,6 +330,10 @@ function showCertificate(){
       <p>Congratulations <b>${userName}</b></p>
       <p>You have successfully completed:</p>
       <h2>${trainingName}</h2>
+
+      <p><b>Date:</b> ${date}</p>
+      <p><b>Time:</b> ${time}</p>
+
       <button class='btn' onclick='renderMenu()'>Back</button>
     </div>
   `;
