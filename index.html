@@ -25,9 +25,10 @@
     .draggable { padding:10px; background:#38bdf8; margin:5px; border-radius:6px; cursor:grab; display:inline-block; }
     .certificate { text-align:center; border:2px solid var(--branch-yellow); padding:20px; border-radius:12px; }
     img { width:100%; border-radius:10px; }
-    .image-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin:10px 0; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 10px 0; }
     .footnote { font-size:12px; opacity:0.6; text-align:center; margin-top:10px; }
     .title-banner { color:var(--branch-yellow); font-weight:bold; font-size:18px; margin-bottom:10px; }
+    .hidden-counter { font-size: 10px; opacity: 0.15; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -171,9 +172,9 @@ const trainings = [
       { type: "slide", title: "Formations and Commands", content: `+ or [+] stands for Ignite.\n\n- or [-] stands for Disignite.`},
       { type: "slide", title: "Formations and Commands", content: `[R-X] stands for Reverse to Location. Report to the location specified (Location replaces X).\n\nLocations include: Holding Cells (HC), Chamber of Law (CoL), Entrance (ET), Combat Room (CR), Rooftops (RT), Archives [ARC], Knighting Hall [KH].`},
       { type: "slide", title: "Formations and Commands", content: `[NC] stands for No Command. Cease all commands and formations given.\n\n[REG] stands for Register. State your rank and username.\n\nExample: "Commissioner, veg_soup."`},
-      { type: "slide", title: "Formations and Commands", content: `The image above shows a formation. As a Recruit, where would you stand?\n\nAnswer on the next page.`, images: ["q1.png"]},
+      { type: "slide", title: "Formations and Commands", content: `The image above shows a formation. As a Recruit, where would you stand?\n\nAnswer on the next page.`, images: ["q2.png"]},
       { type: "quiz", questions: [
-        { type: "mc", question: "Where do you stand in the formation on the previous page?", options:["Behind the issuer to the right.","Behind the issuer to the left.","In front of the issuer.","Behind the issuer in the middle."], answer:0 },
+        { type: "mc", question: "Where do you stand in the formation on the previous page?", options:["Behind the issuer to the right of them.","Behind the issuer to the left of them.","In front of the issuer.","Behind the issuer in the middle."], answer:0 },
         { type: "mc", question: "What must you do in a SFL?", options:["Stand still.","Spread out.","Follow the issuer’s exact movements and commands.","Ignore commands."], answer:2 }
       ]},
       { type: "slide", title: "Moderation Guidelines", content: `A Jedi Investigator should do the following at all times during moderation scenarios:\n\n - Adhere to the Jedi Codex, which contains all of the laws of the Jedi Order.\n\n - Adhere to the Table of Penalties, which contains a guideline of punishments for every law.\n\n - Adhere to the TJO Moderation Guide, which contains all moderation procedures and commands available to Jedi Investigator Middle Ranks.\n\n - Study these three documents rigorously. Failing to abide by these guidelines may result in you failing your probation.\n\n - Have a recording software, such as Medal, running at all times while on duty.Apply nuance while adhering to punishment guidelines.\n\n - Always de-escalate tense situations or individuals.\n\n - Collect and log all evidence and actions taken.`},
@@ -190,6 +191,7 @@ const trainings = [
 
 let currentTraining = 0;
 let currentSection = 0;
+let wrongAttempts = 0;
 let userName = "";
 const app = document.getElementById('app');
 
@@ -219,7 +221,7 @@ function renderMenu(){
     const btn = document.createElement('button');
     btn.textContent = t.title;
     btn.className='btn';
-    btn.onclick = ()=>{ currentTraining=i; currentSection=0; renderSection(); };
+    btn.onclick = ()=>{ currentTraining=i; currentSection=0; wrongAttempts=0; renderSection(); };
     app.appendChild(btn);
   });
 }
@@ -267,6 +269,7 @@ function renderQuiz(questions){
           } else {
             btn.classList.add('wrong');
             q.correctlyAnswered = false;
+            wrongAttempts++;
           }
           checkQuizCompletion(questions);
         };
@@ -313,6 +316,7 @@ function renderQuiz(questions){
             drop.innerHTML = 'Incorrect order, retry.';
             placed = [];
             q.correctlyAnswered = false;
+            wrongAttempts++;
           }
           checkQuizCompletion(questions);
         }
@@ -381,6 +385,8 @@ function showCertificate(){
       <p><b>Date:</b> ${date}</p>
       <p><b>Time:</b> ${time}</p>
       <p><b>Take a screenshot to use in your rank up request.</b></p>
+
+      <p class="hidden-counter">${wrongAttempts}</p>
 
       <button class='btn' onclick='renderMenu()'>Back</button>
     </div>
