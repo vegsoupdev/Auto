@@ -48,9 +48,59 @@ const trainings = [
         { type: "mc", question: "What are the four sections of the Jedi Codex?", options:["Procedure, General Provisions, Punishments, Laws","Summary of General Provisisions, General Provisions, Mod Guide, and the Table of Penalties","Procedure, Summary of General Provisisions, General Provisions, and the Table of Penalties","Procedure, Summary of General Provisisions, Detention Protocol, and the Table of Penalties"], answer:2 },
         { type: "mc", question: "What is the keybind to quickly search for laws and crimes?", options:["Ctrl + F","Ctrl + S","Ctrl + C", "F1"], answer:0 },
       ]},
-      { type: "slide", title: "Section 1: Procedure", content: `.`},
+      { type: "slide", title: "Section 1: Procedure", content: `Section I is split into 4 sub-sections, starting with Jurisdiction.\n\nThe Jurisdiction sub-section states that that no act committed outside of  Order games, Order affiliated platforms or in personal communications outside of Order-related organizations may be considered an offence.\n\nIt also acknowleges that the Jedi High Council is the primary Judicial body of the order, and that no person shall be convicted of an offence that is not otherwise specified in this enactment or future enactments.`},
+      { type: "slide", title: "Section 1: Procedure", content: `The second sub-section is Punishment.\n\nThis sub-section recognizes that the Jedi High Council may determine the punishment for any crime, so long that it remains lawful and fair.\n\n\nThe third sub-section is Duress, Ignorance, and Necesity.\n\nThis protects people who commit an offense under duress, states that ignorance does not mean you are excused from an offense, and assures that those who commit an offense to protect themselves or others is protected from criminal responsibility.`},
+      { type: "slide", title: "Section 1: Procedure", content: `The fourth and final sub-section of Section I of the Jedi Codex is Party(ies) to offenses.\n\nThis states that anyone who encourages someone else to commit a crime will be held criminally responsible.\n\nIt also states that anyone who conspires to commit a crime shall be considered to have committed that crime, regardless if they went through with it or not.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "Does ignorance mean you are excused from responsibility or punishment?", options:["Yes","No"], answer:1 }
+      ]},
+      { type: "slide", title: "Section 2: Summary of General Provisisions", content: `Section II goes over each law and gives a brief overview. Please take note and pay close attention to these.\n\nLaw of Articulation - Protects freedom of speech and defines its limitations.\n\nLaw of Preservation - Maintains the integrity and fair functioning of the game.\n\nLaw of Honour - Governs combat-related conduct and fair play in engagements.\n\nLaw of Quarters - Defines spatial jurisdictions, area-based restrictions, and attire regulations.\n\nLaw of Wisdom - Regulates training sessions, tryouts, and official events.\n\nLaw of Reverence - Governs hierarchical authority and respect for rank and positio\n\nLaw of Adherence - Governs conduct surrounding Temple Guards\n\nLaw of Justice - Addresses the abuse of power and authority within the Order.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "Which law governs combat-related conduct and fair play?", options:["Law of Reverence","Law of Adherence","Law of Honour","Law of Justice"], answer:2 }
+      ]},
+      { type: "slide", title: "Section 3: General Provisions", content: `Section III contains the full set of laws that govern behaviour within the Jedi Order.\n\nEach law defines specific crimes and expectations.\n\nYou are NOT expected to memorize everything right now, focus on understanding what each law covers.\n\nUse Ctrl + F to find specific crimes when needed.`},
+      { type: "slide", title: "Law of Articulation", content: `This law protects expression while defining its limits.\n\nKey Crimes:\n- Suppression of Expression: Preventing someone from speaking without valid reason (e.g., muting or shutting them down unfairly)\n- Doxxing: Sharing private info like real name, location, or personal accounts\n- Extortion: Threatening to expose information to control someone\n- Harassment: Repeated insults, threats, or discriminatory remarks or promoting self-harm, suicide, or violence\n- Indecency: NSFW, sexual, or inappropriate content\n- Impersonation: Pretending to be another player or rank\n- Defamation: Spreading false or damaging claims\n- Recruitment: Advertising external groups without permission`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I pretend to be the Master of the Order, what crime am I committing?", options:["Impersonation","Doxxing","Defamation","Harassment"], answer:0 }
+      ]},
+      { type: "slide", title: "Law of Preservation", content: `This law maintains fairness and proper game function.\n\nKey Crimes:\n- Disturbing the Peace: Causing disorder or abusing loopholes in rules\n- Usage of an Alternative Account: Using alts without approval to bypass rules or punishment\n- Cheating/Hacking: Using scripts, exploits, or third-party tools for advantage\n- Glitching: Abusing bugs or unintended mechanics\n- Unauthorized Team Change: Joining restricted teams without permission\n- Force Point Exploitation: AFK farming or using macros to gain points\n- Obstruction of Identification: Hiding or covering your username\n- Moderation Interference: Interrupting or crowding active moderation scenes`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I hide my username, what crime am I committing?", options:["Glitching","Obstruction of Identification","Force Point Exploitation","Usage of an Alternative Account"], answer:1 },
+        { type: "mc", question: "If I crowd an active moderation scene, what crime am I committing?", options:["Disturbing the Peace","Cheating/Hacking","Moderation Interference","Unauthorized Team Change"], answer:2 }
+      ]},
+      { type: "slide", title: "Law of Honour", content: `This law governs combat and fair play.\n\nKey Crimes:\n- Murder: Killing protected players (Jedi/Visitors) without valid reason\n- Assault: Damaging or attacking protected players\n- Abuse of Protected Status: Using immunity to interfere in fights\n- Abuse of Protected Individual(s): Hiding behind protected individuals during combat\n- Evasion of Combat: Running away or refusing to engage properly (spamming blocks/dashes to avoid fighting)\n- Line-baiting: Attacking across safe zones without committing\n- Combat Healing: Healing someone still actively fighting (unless exempt)`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I attack over the white line at the front of the temple, what crime am I committing?", options:["Murder","Abuse of Protected Status","Combat Healing","Line-baiting"], answer:3 },
+        { type: "mc", question: "If spam dashes and blocks to run away from a Sith, what crime am I committing?", options:["Assault","Evasion of Combat","Abuse of Protected Individual(s)","Combat Healing"], answer:1 }
+      ]},
+      { type: "slide", title: "Law of Quarters", content: `This law defines areas and permissions.\n\nKey Crimes:\n- Jurisdiction Breach: Ignoring orders from authority in controlled areas\n- Trespass: Entering restricted rooms/areas (e.g., Council Chambers, TG Dojo)\n- Spawn Killing: Attacking players before they can react after spawning\n- Misconduct: Using sabers or force where prohibited (e.g., Archives)\n- Unauthorized Representation: Wearing division uniforms/accessories you don’t belong to`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I go past the yellow line at the front of the temple as a Jedi Initiate, what crime am I committing?", options:["Trespass","Jurisdiction Breach", "Misconduct","Unauthorized Representation"], answer:0 }
+      ]},
+      { type: "slide", title: "Law of Wisdom", content: `This law governs trainings, events, and progression.\n\nKey Crimes:\n- Crystal Misusage: Obtaining or deleting crystals improperly\n- Obstruction of Events: Interrupting trainings, tryouts, or trials\n- Attendee Misconduct: Disrespecting hosts or disrupting sessions\n- Host Misconduct: Hosting without permission or abusing authority\n- Fraud: Falsifying logs, applications, or records\n- Inappropriate Solicitation: Repeatedly begging for trainings, ranks, or permissions`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I repeatedly beg to be ranked up, what crime am I committing?", options:["Inappropriate Solicitation", "Crystal Misusage","Attendee Misconduct","Obstruction of Events"], answer:0 }
+      ]},
+      { type: "slide", title: "Law of Reverence", content: `This law enforces respect for authority and structure.\n\nKey Crimes:\n- Treason: Acting to disrupt or weaken the Order or assisting enemies\n- Insubordination: Refusing lawful orders from superiors or following unlawful orders\n- Document Tampering: Editing or destroying official records without permission`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I ignore lawful orders from a moderator (JM+, Investigator MR+, TG MR+), what crime am I committing?", options:["Treason","Insubordination","Document Tampering"], answer:2 }
+      ]},
+      { type: "slide", title: "Law of Adherence", content: `This law governs Temple Guardians and security.\n\nKey Crimes:\n- Disruption of TG Posts: Interfering with on-duty Temple Guardians\n- Disruptive Communication with TG: Talking to TGs without valid reason\n- Disclosure of TG Identity: Exposing hidden usernames\n- Unauthorized Command of TG: Giving orders to TGs without authority\n- Combat Interference: Interrupting duels involving TGs or JTF\n- Killzone Violation: Entering restricted combat/security zones`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I talk to an on-duty TG for no reason, what crime am I committing?", options:["Disruption of TG Posts","Killzone Violation","Unauthorized Command of TG","Disruptive Communication with TG"], answer:3 },
+        { type: "mc", question: "If I leak the name of an on-duty TG (with helmet on), what crime am I committing?", options:["Unauthorized Command of TG","Disruption of TG Posts","Combat Interference","Disclosure of TG Identity"], answer:3 }
+      ]},
+      { type: "slide", title: "Law of Justice", content: `This law governs fairness and abuse of power.\n\nKey Crimes:\n- Judicial Corruption: Bias, favoritism, or abusing legal authority\n- Non-Judicial Corruption: Using rank for personal gain\n- Abuse of Power: Acting outside your authority or misusing rank\n- Office Accumulation: Holding multiple high-ranking positions without permission from JHC\n- Perjury: Lying or withholding truth in investigations\n- Obstruction of Justice: Interfering with investigations or evidence\n- Evading Arrest: Running, leaving, or avoiding punishment\n- Unlawful Detention: Arresting without reason or authority\n- Legal Protection Violations: Denying fair trial or due process`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "If I leave the game to evade a moderator, what crime am I committing?", options:["Unlawful Detention","Legal Protection Violations","Evading Arrest","Perjury"], answer:2 }
+      ]},
       { type: "slide", title: "Table of Penalties", content: `Now we will review the Table of Penalties.\n\nThis document serves as a guide for punishing offenders based on the severity of the crime and how many times it has been committed.\n\nPlease open the Table of Penalties now. A link to it can be found in the faq channel in the Investigators Discord server.\n\nHead to the next page when ready.`},
       { type: "slide", title: "Table of Penalties", content: `In the Table of Penalties, each crime is sorted by law into sections.\n\nThe subject column determines who the crime applies to.\n\nThe example column provides a few scenarios where a specific crime is being committed. These are just examples and don't cover every scenario.\n\nThe class column can be ignored as it isn't used often.\n\nThe last few columns display the punishment for each subsequent law violation.\n\nIf you have anymore questions about the Table of Penalties (or anything else), contact a High Rank.`},
+      { type: "quiz", questions: [
+        { type: "mc", question: "What is the punishment for Line-Baiting II first offense?", options:["10m Jail-time","Warning","Server Ban", "20m Jail-time"], answer:1 },
+        { type: "mc", question: "What is the punishment for Disruption of TG Post third offense?", options:["Warning","Server Ban","10m Jail-time","20m Jail-time"], answer:3 },
+        { type: "mc", question: "What is the punishment for Usage of an Alternative Account first offense?", options:["30m Jail-time","Server Ban","Global Ban","Warning"], answer:2 },
+      ]},
       { type: "slide", title: "Edicts", content: `We will conclude with Edicts.\n\nEdicts serve as legal decrees that should be enforced with the same standards as the Laws found in the Jedi Codex.\n\nEdicts can be found in the Edicts channel under the Official Announcements category in the main TJO Discord.\n\nPlease head to that channel now and open up the post named “D-2025-001-A1, KoS Protocol”.\n\nHead to the next page when ready.`},
       { type: "slide", title: "Edicts", content: `Each edict is enforceable under a specific law and clause. The specific law and clause that should be used can be found under the Enforcement section within each edict.\n\nPlease read through the KoS Protocol Edict and head to the next page once you have a basic understanding of the edict.`},
       { type: "quiz", questions: [
@@ -58,10 +108,7 @@ const trainings = [
         { type: "mc", question: "What is the minimum rank required to follow the KoS Protocol?", options:["Jedi Initiate","Jedi Knight","Padawan Learner","All Jedi"], answer:0},
         { type: "mc", question: "Which of these are exempt from the KoS Protcol Edict?", options:["Jedi Masters","Jedi who are talking to others","Jedi Investigators","Sith or Hostile individuals actively engaged in combat with two or more members of the Jedi Order"], answer:3},
       ]},
-      { type: "quiz", questions: [
-        { type: "order", question: "test", items:["test1","test2","test3"], answer:["test2","test1","test3"] }
-      ]},
-      { type: "slide", title:"End", content: "End of Introduction to Law" }
+      { type: "slide", title:"Conclusion", content: "Thank you for attending this training. This is the conclusion of your Introduction to Law training.\n\nIf you have any questions, feel free to ask in the Discord.\n\nHead to the next page to obtain your Certificate of Completion. Make sure to screenshot it and save the photo for later as it will be used as proof for rank up requirements." }
     ]
   },
   {
@@ -333,6 +380,7 @@ function showCertificate(){
 
       <p><b>Date:</b> ${date}</p>
       <p><b>Time:</b> ${time}</p>
+      <p><b>Take a screenshot to use in your rank up request.</b></p>
 
       <button class='btn' onclick='renderMenu()'>Back</button>
     </div>
